@@ -8,13 +8,13 @@ Página web estática de presentación personal desarrollada como parte de la **
 
 1. Descarga o clona este repositorio:
    ```bash
-   git clone https://github.com/alejandro-escobar/actividad2-html5.git
+   git clone https://github.com/Alejandroesbr/portafolio.git
    ```
 2. Abre el archivo `index.html` directamente en tu navegador (doble clic o arrastrar al navegador).
 3. No requiere servidor ni dependencias adicionales.
 
 > **GitHub Pages:** También puedes ver la página en línea en:
-> `https://alejandro-escobar.github.io/actividad2-html5/`
+> `https://github.com/Alejandroesbr/portafolio.git`
 
 ---
 
@@ -24,7 +24,7 @@ Página web estática de presentación personal desarrollada como parte de la **
 actividad2-html5/
 ├── index.html          # Página principal
 ├── assets/
-│   └── foto-perfil.jpg # Foto de perfil (reemplazar con imagen real)
+│   └── foto-perfil.jpg # Foto de perfil
 └── README.md           # Este documento
 ```
 
@@ -32,7 +32,7 @@ actividad2-html5/
 
 ## Propósito de la página
 
-La página presenta el perfil profesional de **Alejandro Escobar**, estudiante de Ingeniería de Sistemas con énfasis en Desarrollo Web. Su objetivo es servir como carta de presentación digital para posibles colaboradores, docentes o empleadores. El público objetivo son personas del ámbito tecnológico y académico.
+La página presenta el perfil de **Alejandro Escobar**, estudiante de Ingeniería de Sistemas con énfasis en Desarrollo Web. Su objetivo es servir como carta de presentación digital para posibles colaboradores, docentes o empleadores. El público objetivo son personas del ámbito tecnológico y académico.
 
 **Contenido incluido:**
 - Sección "Sobre mí" con fotografía y descripción personal
