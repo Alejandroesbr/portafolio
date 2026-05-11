@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<!--
+  DECISIÓN SEMÁNTICA: lang="es" para decirle al navegador que el contenido está en español.
+-->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Página de presentación personal de Alejandro Escobar, estudiante de Desarrollo Web." />
+  <title>Alejandro Escobar – Estudiante de Desarrollo Web</title>
+
+  <!-- Google Fonts: Alegreya (display) + Source Sans 3 (cuerpo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alegreya:wght@700;800&family=Source+Sans+3:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+
+  <!--
+    ACCESIBILIDAD: Skip link — permite a usuarios de teclado o
+    lectores de pantalla saltar la navegación repetitiva y llegar
+    directamente al contenido principal.
+  -->
+  <a class="skip-link" href="#contenido-principal">Ir al contenido principal</a>
+
+  <!-- 
+       HEADER — identidad y título del sitio
+       DECISIÓN SEMÁNTICA: <header> envuelve el bloque de cabecera
+       del sitio. role="banner" es implícito en <header> top-level.
+  -->
+  <header>
+    <div class="header-inner">
+      <h1>Alejandro Escobar</h1>
+      <p class="tagline">Estudiante de Desarrollo Web · UMB Virtual, Colombia</p>
+    </div>
+  </header>
+
+  <!-- 
+       NAV — navegación principal
+       DECISIÓN SEMÁNTICA: <nav> con aria-label permite a los
+       lectores de pantalla identificar esta región de navegación
+       y diferencia de otras <nav> secundarias que pudiera haber.
+  -->
+  <nav aria-label="Navegación principal">
+    <ul>
+      <li><a href="#sobre">Sobre mí</a></li>
+      <li><a href="#habilidades">Habilidades</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- 
+       MAIN — contenido principal de la página
+       id="contenido-principal" es el destino del skip link.
+  -->
+  <main id="contenido-principal" aria-label="Contenido principal">
+
+    <!--  SECTION: Sobre mí 
+         DECISIÓN SEMÁNTICA: <section> agrupa información temática
+         con su propio encabezado. aria-labelledby enlaza la sección
+         con su <h2> para lectores de pantalla.
+    -->
+    <section id="sobre" class="card" aria-labelledby="titulo-sobre">
+
+      <!--
+        ACCESIBILIDAD: alt descriptivo que comunica quién es la
+        persona, dónde está y el contexto visual de la foto.
+        No se deja vacío ni se repite el nombre sin contexto.
+      -->
+      <img
+        src="assets\yo_mono.jpg"
+        alt="foto mia"
+        width="130"
+        height="130"
+      />
+
+      <div class="bio">
+        <h2 id="titulo-sobre">Sobre mí</h2>
+        <p>
+          Hola, soy Alejandro, estudiante de Ingeniería de
+          Software, este es mi trabajo de la clase de diseño web. Me gusta construir
+          interfaces accesibles e intuitivas que mejoren la experiencia de todo
+          tipo de usuarios.
+        </p>
+        <p>
+          Actualmente profundizando en <strong>HTML5 semántico</strong>,
+          <strong>CSS moderno</strong> y los fundamentos de
+          <strong>JavaScript</strong>. Mi objetivo es contribuir a proyectos de
+          full-stack.
+        </p>
+      </div>
+    </section>
+
+    <!--  SECTION: Habilidades  -->
+    <!-- DECISIÓN SEMÁNTICA: <ul> para enumerar habilidades sin
+         jerarquía de importancia. Si hubiera ranking, usaría <ol>.
+    -->
+    <section id="habilidades" class="card" aria-labelledby="titulo-habilidades">
+      <h2 id="titulo-habilidades">Habilidades técnicas</h2>
+      <ul>
+        <li>HTML5 semántico</li>
+        <li>CSS3 / Flexbox / Grid</li>
+        <li>JavaScript (ES6+)</li>
+        <li>Control de versiones con Git</li>
+        <li>Diseño responsivo</li>
+        <li>Accesibilidad web (a11y)</li>
+        <li>Python básico</li>
+      </ul>
+    </section>
+
+    <!--  SECTION: Proyectos  -->
+    <!-- DECISIÓN SEMÁNTICA: Cada proyecto es un <article> porque
+         es una unidad de contenido independiente y redistribuible
+         (podría existir fuera de esta página con pleno sentido).
+    -->
+    <section id="proyectos" aria-labelledby="titulo-proyectos">
+      <h2 id="titulo-proyectos">Proyectos destacados</h2>
+      <div class="proyectos-grid">
+
+        <article class="proyecto">
+          <h3>Portafolio personal</h3>
+          <p>
+            Sitio estático que presenta mi perfil, habilidades y proyectos.
+            Construido con HTML5 y CSS puro, sin frameworks.
+          </p>
+          <!--
+            ACCESIBILIDAD: aria-label reemplaza el texto genérico
+            "Ver en GitHub" por una descripción precisa que indica
+            a qué proyecto pertenece el enlace.
+          -->
+          <a
+            href="https://github.com/Alejandroesbr/portafolio.git"
+            aria-label="Ver código del Portafolio personal en GitHub (abre en nueva pestaña)"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Ver en GitHub</a>
+        </article>
+
+        <article class="proyecto">
+          <h3> js-interactivo-api-cruds</h3>
+          <p>
+            CRUD interactivo con JavaScript puro, demostrando manipulación
+            del DOM y consumo de APIs REST.
+          </p>
+          <a
+            href="https://github.com/Alejandroesbr/js-interactivo-api-cruds.git"
+            aria-label="Ver código del CRUD interactivo con JavaScript en GitHub (abre en nueva pestaña)"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Ver en GitHub</a>
+        </article>
+
+        <article class="proyecto">
+          <h3>Inventario_Proyecto</h3>
+          <p>
+            Sistema de gestión de inventario con interfaz web, desarrollado con HTML, CSS y JavaScript.
+          </p>
+          <a
+            href="https://github.com/Alejandroesbr/Invetorio_Proyecto.git"
+            aria-label="Ver código del Proyecto de Inventario en GitHub (abre en nueva pestaña)"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Ver en GitHub</a>
+        </article>
+
+      </div>
+    </section>
+
+    <!--  ASIDE: Formulario de contacto  -->
+    <!-- DECISIÓN SEMÁNTICA: <aside> porque el formulario es
+         contenido complementario al perfil, no parte del flujo
+         narrativo central de la página.
+    -->
+    <aside id="contacto" class="card" aria-labelledby="titulo-contacto">
+      <h2 id="titulo-contacto">Contáctame</h2>
+
+      <!--
+        DECISIONES DE ACCESIBILIDAD EN EL FORMULARIO:
+        1. Cada <input>/<textarea> tiene un <label> asociado mediante
+           for/id coincidentes — no se usan placeholders como único
+           identificador (desaparecen al escribir).
+        2. aria-required="true" complementa el atributo required
+           nativo para máxima compatibilidad con tecnologías asistivas.
+        3. autocomplete ayuda a usuarios con dificultades motoras
+           a rellenar campos sin esfuerzo de tipeo.
+      -->
+      <form action="#" method="post" novalidate>
+
+        <div class="form-group">
+          <label for="nombre">Nombre completo</label>
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            placeholder="Ej.: Alejandro Escobar"
+            required
+            aria-required="true"
+            autocomplete="name"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="correo">Correo electrónico</label>
+          <input
+            type="email"
+            id="correo"
+            name="correo"
+            placeholder="ejemplo@correo.com"
+            required
+            aria-required="true"
+            autocomplete="email"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje">Mensaje</label>
+          <textarea
+            id="mensaje"
+            name="mensaje"
+            placeholder="Escribe tu mensaje aquí…"
+            required
+            aria-required="true"
+          ></textarea>
+        </div>
+
+        <!--
+          ACCESIBILIDAD: aria-label en el botón porque el texto
+          "Enviar mensaje" ya es descriptivo; se añade por refuerzo.
+        -->
+        <button type="submit" aria-label="Enviar formulario de contacto">
+          Enviar mensaje
+        </button>
+
+      </form>
+    </aside>
+
+  </main>
+
+  <!-- 
+       FOOTER — información secundaria y créditos
+       DECISIÓN SEMÁNTICA: <footer> contiene metainformación del
+       documento: copyright y enlaces de referencia del autor.
+  -->
+  <footer>
+    <p>
+      &copy; 2026 Alejandro Escobar ·
+      <a
+        href="https://github.com/Alejandroesbr"
+        aria-label="Perfil de Alejandro Escobar en GitHub (abre en nueva pestaña)"
+        target="_blank"
+        rel="noopener noreferrer"
+      >GitHub</a>
+    </p>
+    <p>
+      Desarrollada con HTML5 semántico y buenas prácticas de accesibilidad (WCAG 2.1 AA).
+    </p>
+  </footer>
+
+</body>
+</html>
